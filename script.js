@@ -6,7 +6,7 @@ const task = document.getElementById("task");
 const qa = document.getElementById("qa");
 const output = document.getElementById("output");
 const generateBtn = document.getElementById("generate");
-const deployTime = document.getElementById("deploy");
+const deploy = document.getElementById("deploy");
 
 generateBtn.addEventListener("click", () => {
 	const releaseNotes = `${currentEnv.value} TO ${targetEnv.value} Release Notes ${date.value}
@@ -24,10 +24,12 @@ Deployment:
 
 Added backup to tmp → copied to wp-content/ai1wm-backups → Changed Ownership to Daemon:Daemon
 
-Time: ${deployTime.value} EDT
+Time: ${deploy.value} EDT
 
 ${qa.value}
 `;
 
 	output.value = releaseNotes;
+
+	console.log(deployTime.value);
 });
