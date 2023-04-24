@@ -1,0 +1,54 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	width: 80%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+label {
+	display: block;
+	margin-top: 1rem;
+}
+
+input[type="text"],
+.text-editor {
+	display: block;
+	width: 100%;
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+
+textarea#output {
+	display: block;
+	width: 100%;
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+
+.text-editor {
+	min-height: 100px;
+	resize: vertical;
+}
+
+button {
+	display: block;
+	margin-top: 1rem;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+
+textarea#output {
+	margin-top: 1rem;
+	min-height: 200px;
+}
