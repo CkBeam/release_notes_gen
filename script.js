@@ -11,20 +11,16 @@ const deploy = document.getElementById("deploy");
 generateBtn.addEventListener("click", () => {
 	const releaseNotes = `
 <h2>${currentEnv.value} TO ${targetEnv.value} Release Notes ${date.value}</h2>
-<h3>Release Notes:</h3>
-<p></p>
+<h3 style="font-style: italic;">Release Notes:</h3> 
 <h4>Purpose:</h4>
-<p>${purpose.value}</p>
-<p></p>
+<ul><li>${purpose.value}</li></ul> 
 <h4>Jira Task:</h4>
-<p>${task.value}</p>
-<p></p>
+<ul><li>${task.value}</li></ul> 
 <h4>Deployment:</h4>
-<p>Added backup to tmp → copied to wp-content/ai1wm-backups → Changed Ownership to Daemon:Daemon</p>
+<ul><li>Added backup to tmp → copied to wp-content/ai1wm-backups → Changed Ownership to Daemon:Daemon</li></ul>
 <p>Time: ${deploy.value} EDT</p>
-<p></p>
 <h4>QA Steps:</h4>
-<p>${qa.value}</p>
+<ul><li>${qa.value}</li></ul>
 `;
 
 	output.innerHTML = releaseNotes;
