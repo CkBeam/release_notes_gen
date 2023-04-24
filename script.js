@@ -9,27 +9,23 @@ const generateBtn = document.getElementById("generate");
 const deploy = document.getElementById("deploy");
 
 generateBtn.addEventListener("click", () => {
-	const releaseNotes = `${currentEnv.value} TO ${targetEnv.value} Release Notes ${date.value}
-Release Notes:
-
-Purpose:
-
-${purpose.value}
-
-Jira Task:
-
-${task.value}
-
-Deployment:
-
-Added backup to tmp → copied to wp-content/ai1wm-backups → Changed Ownership to Daemon:Daemon
-
-Time: ${deploy.value} EDT
-
-${qa.value}
+	const releaseNotes = `
+<h2>${currentEnv.value} TO ${targetEnv.value} Release Notes ${date.value}</h2>
+<h3>Release Notes:</h3>
+<p></p>
+<h4>Purpose:</h4>
+<p>${purpose.value}</p>
+<p></p>
+<h4>Jira Task:</h4>
+<p>${task.value}</p>
+<p></p>
+<h4>Deployment:</h4>
+<p>Added backup to tmp → copied to wp-content/ai1wm-backups → Changed Ownership to Daemon:Daemon</p>
+<p>Time: ${deploy.value} EDT</p>
+<p></p>
+<h4>QA Steps:</h4>
+<p>${qa.value}</p>
 `;
 
-	output.value = releaseNotes;
-
-	console.log(deployTime.value);
+	output.innerHTML = releaseNotes;
 });
