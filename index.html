@@ -16,13 +16,18 @@
 			<label>Date:</label>
 			<input type="text" id="date" />
 			<label>Deployment Time:</label>
-			<input type="text" id="deploy"></input>
+			<input type="text" id="deploy" />
 			<label>Purpose:</label>
 			<textarea id="purpose" class="text-editor"></textarea>
 			<label>Jira Task:</label>
 			<textarea id="task" class="text-editor"></textarea>
 			<label>QA Steps:</label>
 			<textarea id="qa" class="text-editor"></textarea>
+			<label>Show Deploy Notes:</label>
+			<div class="switch">
+				<input type="checkbox" id="show-deploy-notes" />
+				<span class="slider round"></span>
+			</div>
 			<button id="generate">Generate Release Notes</button>
 			<label>Output:</label>
 			<div id="output"></div>
