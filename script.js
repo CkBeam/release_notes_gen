@@ -8,9 +8,13 @@ const output = document.getElementById("output");
 const generateBtn = document.getElementById("generate");
 const deploy = document.getElementById("deploy");
 const showDeployNotes = document.getElementById("show-deploy-notes");
-
 const copyOutputBtn = document.getElementById("copy-output");
 const copyMessage = document.getElementById("copy-message");
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("change", () => {
+	document.body.classList.toggle("dark-mode");
+});
 
 copyOutputBtn.addEventListener("click", () => {
 	const range = document.createRange();

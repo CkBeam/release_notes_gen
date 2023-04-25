@@ -151,3 +151,38 @@ input:checked + .slider:before {
 	color: #fff !important;
 	display: none;
 }
+
+body.dark-mode {
+	background-color: #222;
+	color: #f8f9fa;
+}
+
+.dark-mode .container {
+	background-color: #222;
+}
+
+.dark-mode .output-box {
+	background-color: #444;
+	border-color: #555;
+}
+
+.dark-mode .copy-btn,
+.dark-mode .switch .slider {
+	background-color: #4a4a4a;
+}
+
+.dark-mode .copy-btn:hover {
+	background-color: #666;
+}
+
+.theme-toggle-container {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.theme-toggle-container label[for="theme-toggle"] {
+	margin-left: 5px;
+}
