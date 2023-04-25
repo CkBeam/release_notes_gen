@@ -9,6 +9,26 @@ const generateBtn = document.getElementById("generate");
 const deploy = document.getElementById("deploy");
 const showDeployNotes = document.getElementById("show-deploy-notes");
 
+const copyOutputBtn = document.getElementById("copy-output");
+const copyMessage = document.getElementById("copy-message");
+
+copyOutputBtn.addEventListener("click", () => {
+	const range = document.createRange();
+	range.selectNode(output);
+	window.getSelection().removeAllRanges();
+	window.getSelection().addRange(range);
+	document.execCommand("copy");
+	window.getSelection().removeAllRanges();
+
+	// Show copy confirmation message
+	copyMessage.style.display = "inline";
+
+	// Hide the message after 3 seconds
+	setTimeout(() => {
+		copyMessage.style.display = "none";
+	}, 3000);
+});
+
 generateBtn.addEventListener("click", () => {
 	const deploySection = showDeployNotes.checked
 		? `

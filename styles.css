@@ -117,3 +117,37 @@ input:checked + .slider:before {
 	margin-right: 0.5rem;
 	vertical-align: middle;
 }
+
+.output-box {
+	border: 1px solid #ccc;
+	padding: 1rem;
+	margin-top: 1rem;
+	background-color: #f8f9fa;
+	position: relative;
+}
+
+.copy-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.8rem;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+.copy-btn:hover {
+	background-color: #0056b3;
+}
+
+.copy-message {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	background-color: #28a745;
+	color: #fff !important;
+	display: none;
+}
