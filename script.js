@@ -12,8 +12,26 @@ const copyOutputBtn = document.getElementById("copy-output");
 const copyMessage = document.getElementById("copy-message");
 const themeToggle = document.getElementById("theme-toggle");
 
+function saveThemePreference() {
+	localStorage.setItem("darkMode", themeToggle.checked);
+}
+
+function loadThemePreference() {
+	const darkMode = localStorage.getItem("darkMode");
+	if (darkMode === "true") {
+		document.body.classList.add("dark-mode");
+		themeToggle.checked = true;
+	} else {
+		document.body.classList.remove("dark-mode");
+		themeToggle.checked = false;
+	}
+}
+
+document.addEventListener("DOMContentLoaded", loadThemePreference);
+
 themeToggle.addEventListener("change", () => {
 	document.body.classList.toggle("dark-mode");
+	saveThemePreference();
 });
 
 copyOutputBtn.addEventListener("click", () => {

@@ -186,3 +186,15 @@ body.dark-mode {
 .theme-toggle-container label[for="theme-toggle"] {
 	margin-left: 5px;
 }
+
+.dark-mode input[type="text"],
+.dark-mode .text-editor {
+	background-color: #444;
+	color: #f8f9fa;
+	border-color: #555;
+}
+
+.dark-mode input[type="text"]::placeholder,
+.dark-mode .text-editor::placeholder {
+	color: #ccc;
+}
