@@ -1,5 +1,5 @@
 body {
-	font-family: Arial, sans-serif;
+	font-family: "Roboto", Arial, sans-serif;
 }
 
 .container {
@@ -110,4 +110,10 @@ input:checked + .slider:before {
 
 .slider.round:before {
 	border-radius: 50%;
+}
+
+.container i {
+	font-size: 2rem;
+	margin-right: 0.5rem;
+	vertical-align: middle;
 }
