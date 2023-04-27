@@ -110,5 +110,5 @@ flatpickr(date, {
 flatpickr(deploy, {
 	enableTime: true,
 	noCalendar: true,
-	dateFormat: "H:i K",
+	dateFormat: "H:i",
 });
