@@ -21,9 +21,11 @@ function loadThemePreference() {
 	if (darkMode === "true") {
 		document.body.classList.add("dark-mode");
 		themeToggle.checked = true;
+		loadCSS("https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css");
 	} else {
 		document.body.classList.remove("dark-mode");
 		themeToggle.checked = false;
+		unloadCSS("https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css");
 	}
 }
 
@@ -31,8 +33,32 @@ document.addEventListener("DOMContentLoaded", loadThemePreference);
 
 themeToggle.addEventListener("change", () => {
 	document.body.classList.toggle("dark-mode");
+	if (document.body.classList.contains("dark-mode")) {
+		// dark mode is enabled
+		loadCSS("https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css");
+	} else {
+		// dark mode is disabled
+		unloadCSS("https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css");
+	}
 	saveThemePreference();
 });
+
+function loadCSS(url) {
+	let link = document.createElement("link");
+	link.rel = "stylesheet";
+	link.href = url;
+	document.head.appendChild(link);
+}
+
+function unloadCSS(url) {
+	let links = document.head.getElementsByTagName("link");
+	for (let i = 0; i < links.length; i++) {
+		if (links[i].href === url) {
+			document.head.removeChild(links[i]);
+			break;
+		}
+	}
+}
 
 copyOutputBtn.addEventListener("click", () => {
 	const range = document.createRange();
@@ -73,4 +99,16 @@ ${deploySection}
 `;
 
 	output.innerHTML = releaseNotes;
+});
+
+// after all other event listeners
+flatpickr(date, {
+	dateFormat: "m-d-Y",
+});
+
+// after all other event listeners
+flatpickr(deploy, {
+	enableTime: true,
+	noCalendar: true,
+	dateFormat: "H:i K",
 });
