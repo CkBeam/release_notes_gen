@@ -2,7 +2,6 @@ const currentEnv = document.getElementById("current-env");
 const targetEnv = document.getElementById("target-env");
 const date = document.getElementById("date");
 const purpose = document.getElementById("purpose");
-const task = document.getElementById("task");
 const qa = document.getElementById("qa");
 const output = document.getElementById("output");
 const generateBtn = document.getElementById("generate");
@@ -11,6 +10,7 @@ const showDeployNotes = document.getElementById("show-deploy-notes");
 const copyOutputBtn = document.getElementById("copy-output");
 const copyMessage = document.getElementById("copy-message");
 const themeToggle = document.getElementById("theme-toggle");
+const jiraTicket = document.getElementById("jira-ticket");
 
 function saveThemePreference() {
 	localStorage.setItem("darkMode", themeToggle.checked);
@@ -86,17 +86,17 @@ generateBtn.addEventListener("click", () => {
 <h4>QA Steps:</h4>
 <ul><li>${qa.value}</li></ul>`
 		: "";
-
+	const jiraUrl = `https://frontlineinsurance.atlassian.net/jira/software/c/projects/OI/issues/${jiraTicket.value}`;
 	const releaseNotes = `
-<h2>${currentEnv.value} TO ${targetEnv.value} Release Notes ${date.value}</h2>
-<h3 style="font-style: italic;">Release Notes:</h3> 
-<h4>Purpose:</h4>
-<ul><li>${purpose.value}</li></ul> 
-<h4>Jira Task:</h4>
-<ul><li>${task.value}</li></ul> 
-${deploySection}
-<p><strong>Time: </strong>${deploy.value} EDT</p>
-`;
+	<h2>${currentEnv.value} TO ${targetEnv.value} Release Notes ${date.value}</h2>
+	<h3 style="font-style: italic;">Release Notes:</h3> 
+	<h4>Purpose:</h4>
+	<ul><li>${purpose.value}</li></ul> 
+	<h4>Jira Task:</h4>
+	<ul><li><a href="${jiraUrl}">${jiraTicket.value}</a></li></ul> 
+	${deploySection}
+	<p><strong>Time: </strong>${deploy.value} EDT</p>
+	`;
 
 	output.innerHTML = releaseNotes;
 });
