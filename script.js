@@ -86,7 +86,7 @@ generateBtn.addEventListener("click", () => {
 <h4>QA Steps:</h4>
 <ul><li>${qa.value}</li></ul>`
 		: "";
-	const jiraUrl = `https://frontlineinsurance.atlassian.net/jira/software/c/projects/OI/issues/${jiraTicket.value}`;
+	const jiraUrl = `https://frontlineinsurance.atlassian.net/jira/software/c/projects/OI/issues/OI-${jiraTicket.value}`;
 	const releaseNotes = `
 	<h2>${currentEnv.value} TO ${targetEnv.value} Release Notes ${date.value}</h2>
 	<h3 style="font-style: italic;">Release Notes:</h3> 
