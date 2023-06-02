@@ -81,10 +81,14 @@ generateBtn.addEventListener("click", () => {
 	const deploySection = showDeployNotes.checked
 		? `
 <h4>Deployment:</h4>
-<ul><li>Added backup to tmp → copied to wp-content/ai1wm-backups → Changed Ownership to Daemon:Daemon</li></ul>
-<p>Time: ${deploy.value} EDT</p>
+<ul><li>Added backup to tmp → copied to wp-content/ai1wm-backups → Changed Ownership to Daemon:Daemon</li></ul><ul><li>Saved Hyperlinks.\n</li></ul><ul><li>Cleared Cache.\n</li></ul>
+<p><strong>Time: </strong> ${deploy.value} EDT</p>
 <h4>QA Steps:</h4>
-<ul><li>${qa.value}</li></ul>`
+<ul><li>${qa.value}</li></ul>
+<ul><li>Checked mobile and tablet view. -</li></ul>
+<ul><li>Checked badges. - </li></ul>
+<ul><li>Checked DB string. - </li></ul>
+<ul><li>Checked Modal - </li></ul>`
 		: "";
 	const jiraUrl = `https://frontlineinsurance.atlassian.net/jira/software/c/projects/OI/issues/OI-${jiraTicket.value}`;
 	const releaseNotes = `
@@ -95,7 +99,6 @@ generateBtn.addEventListener("click", () => {
 	<h4>Jira Task:</h4>
 	<ul><li><a href="${jiraUrl}">${jiraTicket.value}</a></li></ul> 
 	${deploySection}
-	<p><strong>Time: </strong>${deploy.value} EDT</p>
 	`;
 
 	output.innerHTML = releaseNotes;
